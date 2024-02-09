@@ -4,8 +4,8 @@ Project 1 Repo
 
 
 
-Scenario: If person was put into cryosleep they were transported to another dimension
-    Given Bob was put into cryosleep
+Scenario: If person was put into cryosleep they were transported to another dimension \n 
+    Given Bob was put into cryosleep \\
     When We generate list of people that are transported to another dimension
     Then Bob is on that list
     
