@@ -2,8 +2,6 @@
 Project 1 Repo
 
 
-
-
 Scenario: If person was put into cryosleep they were transported to another dimension 
 
     > Given Bob was put into cryosleep 
@@ -22,3 +20,7 @@ Scenario: If a person is on the starboard side of the ship they were transported
     > When We generate a list of people that are transported
     > Then Marla is on that list
 
+
+Work Distribution:
+
+Tracy: wrote `test_remove_NA`and `test_splitWomanAndChildrenFromMen`

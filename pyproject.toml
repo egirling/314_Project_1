@@ -3,7 +3,8 @@ requires = ["setuptools", "pandas"]
 build-backend = "setuptools.build_meta"
 
 [tool.dagster]
-module_name = "314Project1DAG"
+module_name = "src"
 
 [tool.pytest.ini_options]
 addopts = ["--import-mode=importlib"]
+

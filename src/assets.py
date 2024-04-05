@@ -3,6 +3,31 @@ import pandas as pd
 from dagster import MetadataValue, asset, MaterializeResult, AssetExecutionContext # import the `dagster` library
 data = pd.read_csv("spaceship-titanic/train.csv")
 
+
+@asset
+def splitCabin(context: AssetExecutionContext) -> MaterializeResult:
+   data[['Deck', 'Num', 'Side']] = data['Cabin'].str.split('/', expand=True)
+
+   side_p = data[data['Side'] == 'P']
+   side_s = data[data['Side'] == 'S']
+
+   num_survived_side_p = side_p['Transported'].sum()
+   num_survived_side_s = side_s['Transported'].sum()
+
+   total_port_passengers = len(side_p)
+   total_starboard_passengers = len(side_s)
+
+   survival_rate_port = float(num_survived_side_p / total_port_passengers)
+   survival_rate_starboard = float(num_survived_side_s / total_starboard_passengers)
+  
+   return MaterializeResult(
+       metadata={
+           "Survival Rate of Passengers Staying Port": survival_rate_port,
+           "Survival Rate of Passengers Staying Starboard": survival_rate_starboard,
+       }
+   )
+
+
 @asset 
 def splitWomanAndChildrenFromMen(context: AssetExecutionContext) -> MaterializeResult:
     adults = data[data['Age'] > 18]
