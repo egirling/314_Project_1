@@ -42,5 +42,26 @@ def sumAmenityCharges(context: AssetExecutionContext) -> MaterializeResult:
             "Survival Rate for Low Spenders": survival_rate_low_spenders, 
         }
     )
-    
+
+@asset 
+def splitByVIP(context: AssetExecutionContext) -> MaterializeResult:
+    vip = data[data['VIP'] == True]
+    non_vip = data[data['VIP'] == False]
+
+
+    num_survived_vip = vip['Transported'].sum()
+    num_survived_non_vip = non_vip['Transported'].sum()
+
+    total_vip_passengers = len(vip)
+    total_non_vip_passengers = len(non_vip)
+
+    survival_rate_vip = float(num_survived_vip / total_vip_passengers)
+    survival_rate_non_vip = float(num_survived_non_vip / total_non_vip_passengers)
+
+    return MaterializeResult(
+        metadata={
+            "Survival Rate for VIP": survival_rate_vip, 
+            "Survival Rate for Non-VIP": survival_rate_non_vip, 
+        }
+    )
 
