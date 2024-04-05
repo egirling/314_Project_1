@@ -1,5 +1,0 @@
-[32m2024-04-04 18:54:52 -0500[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 6065909d-12b9-48de-9515-187cde2a8ebb - 24329 - LOGS_CAPTURED - Started capturing logs in process (pid: 24329).
-[32m2024-04-04 18:54:52 -0500[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 6065909d-12b9-48de-9515-187cde2a8ebb - 24329 - training_data - STEP_START - Started execution of step "training_data".
-[32m2024-04-04 18:54:52 -0500[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 6065909d-12b9-48de-9515-187cde2a8ebb - 24329 - training_data - STEP_OUTPUT - Yielded output "result" of type "Nothing". (Type check passed).
-[32m2024-04-04 18:54:52 -0500[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 6065909d-12b9-48de-9515-187cde2a8ebb - 24329 - training_data - ASSET_MATERIALIZATION - Materialized value training_data.
-[32m2024-04-04 18:54:52 -0500[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 6065909d-12b9-48de-9515-187cde2a8ebb - 24329 - training_data - STEP_SUCCESS - Finished execution of step "training_data" in 104ms.
