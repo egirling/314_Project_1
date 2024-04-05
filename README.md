@@ -24,3 +24,4 @@ Scenario: If a person is on the starboard side of the ship they were transported
 Work Distribution:
 
 Tracy: wrote `test_remove_NA`and `test_splitWomanAndChildrenFromMen`
+Elizabeth: wrote 'splitByVIP', 'sumAmenityCharges, and 'splitWomanAndChildrenFromMen'
