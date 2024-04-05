@@ -3,7 +3,7 @@ import pandas as pd
 from dagster import MetadataValue, asset, MaterializeResult, AssetExecutionContext # import the `dagster` library
 data = pd.read_csv("spaceship-titanic/train.csv")
 
-@asset # add the asset decorator to tell Dagster this is an asset
+@asset 
 def splitWomanAndChildrenFromMen(context: AssetExecutionContext) -> MaterializeResult:
     adults = data[data['Age'] > 18]
     children = data[data['Age'] <= 18]
@@ -21,6 +21,25 @@ def splitWomanAndChildrenFromMen(context: AssetExecutionContext) -> MaterializeR
         metadata={
             "Survival Rate of Adults": survival_rate_adults, 
             "Survival Rate of Children": survival_rate_children,
+        }
+    )
+
+@asset 
+def sumAmenityCharges(context: AssetExecutionContext) -> MaterializeResult:
+    data['money spent on amenities'] = data[['RoomService', 'FoodCourt', 'ShoppingMall', 'Spa', 'VRDeck']].sum(axis=1)
+
+    data.drop(columns=['RoomService', 'FoodCourt', 'ShoppingMall', 'Spa', 'VRDeck'], inplace=True)
+
+    threshold = data['money spent on amenities'].quantile(0.5)
+    data['spender_category'] = data['money spent on amenities'].apply(lambda x: 'High Spender' if x >= threshold else 'Low Spender')
+    #survival_rate_by_spender_category = data.groupby('spender_category')['Transported'].mean()
+    survival_rate_high_spenders = float(data[data['money spent on amenities'] >= threshold]['Transported'].mean())
+    survival_rate_low_spenders = float(data[data['money spent on amenities'] < threshold]['Transported'].mean())
+
+    return MaterializeResult(
+        metadata={
+            "Survival Rate for High Spenders": survival_rate_high_spenders, 
+            "Survival Rate for Low Spenders": survival_rate_low_spenders, 
         }
     )
     

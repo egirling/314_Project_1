@@ -1,7 +1,7 @@
-[32m2024-04-04 22:39:56 -0500[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - d91d508d-e33c-4ad1-8e6e-b533618d8b3d - 26493 - LOGS_CAPTURED - Started capturing logs in process (pid: 26493).
-[32m2024-04-04 22:39:56 -0500[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - d91d508d-e33c-4ad1-8e6e-b533618d8b3d - 26493 - splitWomanAndChildrenFromMen - STEP_START - Started execution of step "splitWomanAndChildrenFromMen".
+[32m2024-04-04 23:11:34 -0500[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 9affc88d-f217-4c0e-8638-dc583bc20e46 - 27248 - LOGS_CAPTURED - Started capturing logs in process (pid: 27248).
+[32m2024-04-04 23:11:34 -0500[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 9affc88d-f217-4c0e-8638-dc583bc20e46 - 27248 - sumAmenityCharges - STEP_START - Started execution of step "sumAmenityCharges".
 Exception while writing logger call to event log: Unhandled value type <class 'numpy.float64'>
-[32m2024-04-04 22:39:56 -0500[0m - dagster - [34mERROR[0m - [31m__ASSET_JOB - d91d508d-e33c-4ad1-8e6e-b533618d8b3d - 26493 - splitWomanAndChildrenFromMen - STEP_FAILURE - Execution of step "splitWomanAndChildrenFromMen" failed.
+[32m2024-04-04 23:11:34 -0500[0m - dagster - [34mERROR[0m - [31m__ASSET_JOB - 9affc88d-f217-4c0e-8638-dc583bc20e46 - 27248 - sumAmenityCharges - STEP_FAILURE - Execution of step "sumAmenityCharges" failed.
 
 dagster._serdes.errors.SerializationError: Unhandled value type <class 'numpy.float64'>
 
