@@ -21,7 +21,8 @@ Scenario: If a person is on the starboard side of the ship they were transported
     > Then Marla is on that list
 
 
-Work Distribution:
+
+# Work Distribution:
 
 Tracy: wrote `test_remove_NA`and `test_splitWomanAndChildrenFromMen`, 
     made adjustments to `test_splitCabin`, `test_sumAmenityCharges`, `test_splitByVIP`

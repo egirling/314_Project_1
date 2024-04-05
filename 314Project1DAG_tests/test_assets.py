@@ -1,5 +1,4 @@
 import pandas as pd
-import pytest
 from dagster import MetadataValue, MaterializeResult, AssetExecutionContext
 
 from src import assets
