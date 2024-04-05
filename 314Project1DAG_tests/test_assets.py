@@ -4,17 +4,15 @@ from dagster import MetadataValue, MaterializeResult, AssetExecutionContext
 from src import assets
 
 
-# def test_remove_NA():
-#     data = pd.DataFrame({"Destination": ["TRAPPIST-1e", "TRAPPIST-1e", "", "", "55 Cancri e"], 
-#                          "Name": ["", "Solam Susent", "Reney Baketton", "", "Mollen Mcfaddennon"]})
-#     actual = assets.remove_NA(data)
-#     pd.testing.assert_frame_equal(
-#         actual,
-#         pd.DataFrame({"Destination": ["TRAPPIST-1e", "TRAPPIST-1e", "", "", "55 Cancri e"], 
-#                       "Name": ["", "Solam Susent", "Reney Baketton", "", "Mollen Mcfaddennon"]})
-#     )
-
-# test above not done, will finalize and rename stuff later
+ def test_remove_NA():
+     data = pd.DataFrame({"Destination": ["TRAPPIST-1e", "TRAPPIST-1e", "", "", "55 Cancri e"], 
+                          "Name": ["", "Solam Susent", "Reney Baketton", "", "Mollen Mcfaddennon"]})
+     actual = assets.remove_NA(data)
+     pd.testing.assert_frame_equal(
+         actual,
+         pd.DataFrame({"Destination": ["TRAPPIST-1e", "TRAPPIST-1e", "", "", "55 Cancri e"], 
+                       "Name": ["", "Solam Susent", "Reney Baketton", "", "Mollen Mcfaddennon"]})
+     )
 
 
 def test_splitCabin():

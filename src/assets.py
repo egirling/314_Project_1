@@ -3,6 +3,22 @@ import pandas as pd
 from dagster import MetadataValue, asset, MaterializeResult, AssetExecutionContext # import the `dagster` library
 data = pd.read_csv("spaceship-titanic/train.csv")
 
+@asset
+def remove_NA(context: AssetExecutionContext) -> MaterializeResult:
+  
+   rows_before_drop = data.shape[0]
+
+   data.dropna(inplace=True)
+
+   rows_after_drop = data.shape[0]
+
+   return MaterializeResult(
+       metadata={
+           "Rows Before Removing NA Values": rows_before_drop,
+           "Rows After Removing NA Values": rows_after_drop,
+       }
+   )
+
 
 @asset
 def splitCabin(context: AssetExecutionContext) -> MaterializeResult:
