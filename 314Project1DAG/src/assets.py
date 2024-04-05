@@ -64,4 +64,3 @@ def splitByVIP(context: AssetExecutionContext) -> MaterializeResult:
             "Survival Rate for Non-VIP": survival_rate_non_vip, 
         }
     )
-

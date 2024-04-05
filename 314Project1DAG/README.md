@@ -1,47 +1,24 @@
-# 314Project1DAG
+# 314_Project_1
+Project 1 Repo
 
-This is a [Dagster](https://dagster.io/) project scaffolded with [`dagster project scaffold`](https://docs.dagster.io/getting-started/create-new-project).
 
-## Getting started
 
-First, install your Dagster code location as a Python package. By using the --editable flag, pip will install your Python package in ["editable mode"](https://pip.pypa.io/en/latest/topics/local-project-installs/#editable-installs) so that as you develop, local code changes will automatically apply.
 
-```bash
-pip install -e ".[dev]"
-```
+Scenario: If person was put into cryosleep they were transported to another dimension 
 
-Then, start the Dagster UI web server:
+    > Given Bob was put into cryosleep 
+    > When We generate list of people that are transported to another dimension
+    > Then Bob is on that list
+    
+Scenario: If the person is a child they were not transported
 
-```bash
-dagster dev
-```
+    > Given Billy Bob is child
+    > When We generate list of people that are transported
+    > Then Billy Bob is not on that list
+    
+Scenario: If a person is on the starboard side of the ship they were transported to another dimension
 
-Open http://localhost:3000 with your browser to see the project.
+    > Given Marla was on the starboard side of the ship
+    > When We generate a list of people that are transported
+    > Then Marla is on that list
 
-You can start writing assets in `314Project1DAG/assets.py`. The assets are automatically loaded into the Dagster code location as you define them.
-
-## Development
-
-### Adding new Python dependencies
-
-You can specify new Python dependencies in `setup.py`.
-
-### Unit testing
-
-Tests are in the `314Project1DAG_tests` directory and you can run tests using `pytest`:
-
-```bash
-pytest 314Project1DAG_tests
-```
-
-### Schedules and sensors
-
-If you want to enable Dagster [Schedules](https://docs.dagster.io/concepts/partitions-schedules-sensors/schedules) or [Sensors](https://docs.dagster.io/concepts/partitions-schedules-sensors/sensors) for your jobs, the [Dagster Daemon](https://docs.dagster.io/deployment/dagster-daemon) process must be running. This is done automatically when you run `dagster dev`.
-
-Once your Dagster Daemon is running, you can start turning on schedules and sensors for your jobs.
-
-## Deploy on Dagster Cloud
-
-The easiest way to deploy your Dagster project is to use Dagster Cloud.
-
-Check out the [Dagster Cloud Documentation](https://docs.dagster.cloud) to learn more.
