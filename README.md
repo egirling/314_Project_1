@@ -28,3 +28,7 @@ Tracy: wrote `test_remove_NA`and `test_splitWomanAndChildrenFromMen`,
        made adjustments to `test_splitCabin`, `test_sumAmenityCharges`, and`test_splitByVIP`
 
 Elizabeth: wrote `splitByVIP`, `sumAmenityCharges`, and `splitWomanAndChildrenFromMen`
+
+Nicole: wrote `splitCabin`
+
+Heidi: wrote `test_splitCabin`, `test_sumAmenityCharges`, and`test_splitByVIP`
