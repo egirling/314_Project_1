@@ -4,14 +4,23 @@ from dagster import MetadataValue, MaterializeResult, AssetExecutionContext
 from src import assets
 
 
- def test_remove_NA():
+def test_remove_NA():
      data = pd.DataFrame({"Destination": ["TRAPPIST-1e", "TRAPPIST-1e", "", "", "55 Cancri e"], 
                           "Name": ["", "Solam Susent", "Reney Baketton", "", "Mollen Mcfaddennon"]})
      actual = assets.remove_NA(data)
+
+     rows_before_drop = data.shape[0]
+     data.dropna(inplace=True)
+     rows_after_drop = data.shape[0]
+
      pd.testing.assert_frame_equal(
          actual,
-         pd.DataFrame({"Destination": ["TRAPPIST-1e", "TRAPPIST-1e", "", "", "55 Cancri e"], 
-                       "Name": ["", "Solam Susent", "Reney Baketton", "", "Mollen Mcfaddennon"]})
+         MaterializeResult(
+            metadata = {
+                "Rows Before Removing NA Values": rows_before_drop,
+                "Rows After Removing NA Values": rows_after_drop,
+            }
+        )
      )
 
 
