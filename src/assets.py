@@ -108,6 +108,25 @@ def splitWomanAndChildrenFromMen(context: AssetExecutionContext) -> MaterializeR
 
     survival_rate_adults = float(survived_adults / total_adults if total_adults > 0 else 0)
     survival_rate_children = float(survived_children / total_children if total_children > 0 else 0)
+
+    plt.figure(figsize=(10, 6))
+
+    bar_width = 0.35
+
+    positions = [0, 1]
+
+    plt.bar(positions, [total_adults, total_children], bar_width, color='skyblue', label='Total Passengers')
+    plt.bar([pos + bar_width for pos in positions], [survived_adults, survived_children], bar_width, color='salmon', label='Survivors')
+
+    plt.title('Number of Passengers and Survivors for Adults and Children')
+    plt.xlabel('Passenger Type')
+    plt.ylabel('Count')
+    plt.xticks([pos + bar_width / 2 for pos in positions], ['Adults', 'Children'])
+    plt.legend()
+    plt.tight_layout()
+    plt.show()
+
+    
     
     return MaterializeResult(
         metadata={
@@ -124,7 +143,6 @@ def sumAmenityCharges(context: AssetExecutionContext) -> MaterializeResult:
 
     threshold = data['money spent on amenities'].quantile(0.5)
     data['spender_category'] = data['money spent on amenities'].apply(lambda x: 'High Spender' if x >= threshold else 'Low Spender')
-    #survival_rate_by_spender_category = data.groupby('spender_category')['Transported'].mean()
     survival_rate_high_spenders = float(data[data['money spent on amenities'] >= threshold]['Transported'].mean())
     survival_rate_low_spenders = float(data[data['money spent on amenities'] < threshold]['Transported'].mean())
 
@@ -146,6 +164,20 @@ def splitByVIP(context: AssetExecutionContext) -> MaterializeResult:
 
     total_vip_passengers = len(vip)
     total_non_vip_passengers = len(non_vip)
+
+    plt.figure(figsize=(8, 6))
+
+    plt.bar(['Total Passengers', 'Survivors'], [total_vip_passengers, num_survived_vip], color=['skyblue', 'salmon'])
+    plt.title('Number of Passengers and Survivors for VIPs')
+    plt.ylabel('Count')
+    plt.show()
+
+    plt.figure(figsize=(8, 6))
+
+    plt.bar(['Total Passengers', 'Survivors'], [total_non_vip_passengers, num_survived_non_vip], color=['skyblue', 'salmon'])
+    plt.title('Number of Passengers and Survivors for Non-VIPs')
+    plt.ylabel('Count')
+    plt.show()
 
     survival_rate_vip = float(num_survived_vip / total_vip_passengers)
     survival_rate_non_vip = float(num_survived_non_vip / total_non_vip_passengers)

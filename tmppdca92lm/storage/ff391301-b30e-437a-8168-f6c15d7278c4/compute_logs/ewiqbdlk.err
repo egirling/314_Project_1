@@ -1,0 +1,2 @@
+[32m2024-04-24 17:28:23 -0500[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - ff391301-b30e-437a-8168-f6c15d7278c4 - 16460 - LOGS_CAPTURED - Started capturing logs in process (pid: 16460).
+[32m2024-04-24 17:28:23 -0500[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - ff391301-b30e-437a-8168-f6c15d7278c4 - 16460 - splitByVIP - STEP_START - Started execution of step "splitByVIP".

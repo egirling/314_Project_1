@@ -1,0 +1,2 @@
+[32m2024-04-24 17:37:30 -0500[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 4a778fbd-caf0-4f5b-afff-ddb55f61d539 - 16770 - LOGS_CAPTURED - Started capturing logs in process (pid: 16770).
+[32m2024-04-24 17:37:30 -0500[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 4a778fbd-caf0-4f5b-afff-ddb55f61d539 - 16770 - splitWomanAndChildrenFromMen - STEP_START - Started execution of step "splitWomanAndChildrenFromMen".
