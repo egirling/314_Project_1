@@ -29,7 +29,7 @@ def test_splitCabin():
                          "Transported": [False, True, False, False]})
     actual = assets.splitCabin(data)
 
-    survival_rate_port = float(0,5)
+    survival_rate_port = float(0.5)
     survival_rate_starboard = float(0)
 
     pd.testing.assert_frame_equal(

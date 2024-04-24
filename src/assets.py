@@ -30,6 +30,8 @@ def splitCabin(context: AssetExecutionContext) -> MaterializeResult:
    num_survived_side_p = side_p['Transported'].sum()
    num_survived_side_s = side_s['Transported'].sum()
 
+   data = data.drop('Cabin', axis=1)
+
    total_port_passengers = len(side_p)
    total_starboard_passengers = len(side_s)
 
