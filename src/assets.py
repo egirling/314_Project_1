@@ -1,4 +1,5 @@
 import pandas as pd
+import matplotlib.pyplot as plt
 
 from dagster import MetadataValue, asset, MaterializeResult, AssetExecutionContext # import the `dagster` library
 data = pd.read_csv("spaceship-titanic/train.csv")
@@ -9,7 +10,7 @@ def remove_NA(context: AssetExecutionContext) -> MaterializeResult:
    rows_before_drop = data.shape[0]
 
    data.dropna(inplace=True)
-
+   
    rows_after_drop = data.shape[0]
 
    return MaterializeResult(
@@ -22,10 +23,57 @@ def remove_NA(context: AssetExecutionContext) -> MaterializeResult:
 
 @asset
 def splitCabin(context: AssetExecutionContext) -> MaterializeResult:
+   global data
    data[['Deck', 'Num', 'Side']] = data['Cabin'].str.split('/', expand=True)
+
+
+   side_stats = data.groupby('Side').agg({'Transported': ['sum', 'count']})
+   side_stats.columns = ['Survivors', 'TotalPassengers']
+   side_stats.reset_index(inplace=True)
+
+   plt.figure(figsize=(8, 6))
+
+   bar_width = 0.35
+
+   positions = range(len(side_stats))
+
+   plt.bar(positions, side_stats['TotalPassengers'], bar_width, color='skyblue', label='Total Passengers')
+   plt.bar([pos + bar_width for pos in positions], side_stats['Survivors'], bar_width, color='salmon', label='Survivors')
+
+   plt.title('Number of Passengers and Survivors Across Sides')
+   plt.xlabel('Side')
+   plt.ylabel('Count')
+   plt.xticks([pos + bar_width / 2 for pos in positions], side_stats['Side'])
+   plt.legend()
+   plt.tight_layout()
+   plt.show()  
+
+   deck_stats = data.groupby('Deck').agg({'Transported': ['sum', 'count']})
+   deck_stats.columns = ['Survivors', 'TotalPassengers']
+   deck_stats.reset_index(inplace=True)
+
+   plt.figure(figsize=(12, 6))
+
+   bar_width = 0.35
+
+   positions = range(len(deck_stats))
+
+   plt.bar(positions, deck_stats['TotalPassengers'], bar_width, color='skyblue', label='Total Passengers')
+   plt.bar([pos + bar_width for pos in positions], deck_stats['Survivors'], bar_width, color='salmon', label='Survivors')
+
+   plt.title('Number of Passengers and Survivors in Each Deck')
+   plt.xlabel('Deck')
+   plt.ylabel('Count')
+   plt.xticks([pos + bar_width / 2 for pos in positions], deck_stats['Deck'])
+   plt.legend()
+   plt.tight_layout()
+   plt.show()
+
+
 
    side_p = data[data['Side'] == 'P']
    side_s = data[data['Side'] == 'S']
+   
 
    num_survived_side_p = side_p['Transported'].sum()
    num_survived_side_s = side_s['Transported'].sum()
@@ -37,7 +85,8 @@ def splitCabin(context: AssetExecutionContext) -> MaterializeResult:
 
    survival_rate_port = float(num_survived_side_p / total_port_passengers)
    survival_rate_starboard = float(num_survived_side_s / total_starboard_passengers)
-  
+   
+   
    return MaterializeResult(
        metadata={
            "Survival Rate of Passengers Staying Port": survival_rate_port,

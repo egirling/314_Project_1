@@ -1,0 +1,5 @@
+[32m2024-04-24 16:36:26 -0500[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 375042e6-c230-48ec-9280-943e87eb9b98 - 14421 - LOGS_CAPTURED - Started capturing logs in process (pid: 14421).
+[32m2024-04-24 16:36:26 -0500[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 375042e6-c230-48ec-9280-943e87eb9b98 - 14421 - splitCabin - STEP_START - Started execution of step "splitCabin".
+[32m2024-04-24 16:36:49 -0500[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 375042e6-c230-48ec-9280-943e87eb9b98 - 14421 - splitCabin - STEP_OUTPUT - Yielded output "result" of type "Nothing". (Type check passed).
+[32m2024-04-24 16:36:49 -0500[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 375042e6-c230-48ec-9280-943e87eb9b98 - 14421 - splitCabin - ASSET_MATERIALIZATION - Materialized value splitCabin.
+[32m2024-04-24 16:36:49 -0500[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 375042e6-c230-48ec-9280-943e87eb9b98 - 14421 - splitCabin - STEP_SUCCESS - Finished execution of step "splitCabin" in 23.71s.

@@ -1,0 +1,5 @@
+[32m2024-04-24 16:15:56 -0500[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 78b4abce-712c-40a7-9e1e-d61252007b52 - 13600 - LOGS_CAPTURED - Started capturing logs in process (pid: 13600).
+[32m2024-04-24 16:15:56 -0500[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 78b4abce-712c-40a7-9e1e-d61252007b52 - 13600 - splitByVIP - STEP_START - Started execution of step "splitByVIP".
+[32m2024-04-24 16:15:56 -0500[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 78b4abce-712c-40a7-9e1e-d61252007b52 - 13600 - splitByVIP - STEP_OUTPUT - Yielded output "result" of type "Nothing". (Type check passed).
+[32m2024-04-24 16:15:56 -0500[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 78b4abce-712c-40a7-9e1e-d61252007b52 - 13600 - splitByVIP - ASSET_MATERIALIZATION - Materialized value splitByVIP.
+[32m2024-04-24 16:15:56 -0500[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 78b4abce-712c-40a7-9e1e-d61252007b52 - 13600 - splitByVIP - STEP_SUCCESS - Finished execution of step "splitByVIP" in 102ms.
