@@ -1,5 +1,0 @@
-[32m2024-04-24 23:20:57 -0500[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 4eb6bf00-218a-4f46-975a-5da37f385b68 - 42500 - LOGS_CAPTURED - Started capturing logs in process (pid: 42500).
-[32m2024-04-24 23:20:57 -0500[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 4eb6bf00-218a-4f46-975a-5da37f385b68 - 42500 - splitWomanAndChildrenFromMen - STEP_START - Started execution of step "splitWomanAndChildrenFromMen".
-[32m2024-04-24 23:20:57 -0500[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 4eb6bf00-218a-4f46-975a-5da37f385b68 - 42500 - splitWomanAndChildrenFromMen - STEP_OUTPUT - Yielded output "result" of type "Nothing". (Type check passed).
-[32m2024-04-24 23:20:57 -0500[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 4eb6bf00-218a-4f46-975a-5da37f385b68 - 42500 - splitWomanAndChildrenFromMen - ASSET_MATERIALIZATION - Materialized value splitWomanAndChildrenFromMen.
-[32m2024-04-24 23:20:57 -0500[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 4eb6bf00-218a-4f46-975a-5da37f385b68 - 42500 - splitWomanAndChildrenFromMen - STEP_SUCCESS - Finished execution of step "splitWomanAndChildrenFromMen" in 136ms.

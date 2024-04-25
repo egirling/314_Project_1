@@ -1,5 +1,0 @@
-[32m2024-04-05 14:41:51 -0500[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 0a49a177-22c4-4e94-b421-99de9016c507 - 35741 - LOGS_CAPTURED - Started capturing logs in process (pid: 35741).
-[32m2024-04-05 14:41:51 -0500[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 0a49a177-22c4-4e94-b421-99de9016c507 - 35741 - sumAmenityCharges - STEP_START - Started execution of step "sumAmenityCharges".
-[32m2024-04-05 14:41:52 -0500[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 0a49a177-22c4-4e94-b421-99de9016c507 - 35741 - sumAmenityCharges - STEP_OUTPUT - Yielded output "result" of type "Nothing". (Type check passed).
-[32m2024-04-05 14:41:52 -0500[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 0a49a177-22c4-4e94-b421-99de9016c507 - 35741 - sumAmenityCharges - ASSET_MATERIALIZATION - Materialized value sumAmenityCharges.
-[32m2024-04-05 14:41:52 -0500[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 0a49a177-22c4-4e94-b421-99de9016c507 - 35741 - sumAmenityCharges - STEP_SUCCESS - Finished execution of step "sumAmenityCharges" in 118ms.
