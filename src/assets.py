@@ -5,18 +5,15 @@ data = pd.read_csv("spaceship-titanic/train.csv")
 
 @asset
 def remove_NA(context: AssetExecutionContext) -> MaterializeResult:
-  
    rows_before_drop = data.shape[0]
-
    data.dropna(inplace=True)
-
    rows_after_drop = data.shape[0]
 
    return MaterializeResult(
-       metadata={
+       metadata={        
            "Rows Before Removing NA Values": rows_before_drop,
            "Rows After Removing NA Values": rows_after_drop,
-       }
+        }
    )
 
 

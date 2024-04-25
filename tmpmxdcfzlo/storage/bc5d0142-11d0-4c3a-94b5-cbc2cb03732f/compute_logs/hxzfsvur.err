@@ -1,0 +1,5 @@
+[32m2024-04-24 15:57:31 -0500[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - bc5d0142-11d0-4c3a-94b5-cbc2cb03732f - 12933 - LOGS_CAPTURED - Started capturing logs in process (pid: 12933).
+[32m2024-04-24 15:57:31 -0500[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - bc5d0142-11d0-4c3a-94b5-cbc2cb03732f - 12933 - remove_NA - STEP_START - Started execution of step "remove_NA".
+[32m2024-04-24 15:57:31 -0500[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - bc5d0142-11d0-4c3a-94b5-cbc2cb03732f - 12933 - remove_NA - STEP_OUTPUT - Yielded output "result" of type "Nothing". (Type check passed).
+[32m2024-04-24 15:57:31 -0500[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - bc5d0142-11d0-4c3a-94b5-cbc2cb03732f - 12933 - remove_NA - ASSET_MATERIALIZATION - Materialized value remove_NA.
+[32m2024-04-24 15:57:31 -0500[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - bc5d0142-11d0-4c3a-94b5-cbc2cb03732f - 12933 - remove_NA - STEP_SUCCESS - Finished execution of step "remove_NA" in 211ms.
